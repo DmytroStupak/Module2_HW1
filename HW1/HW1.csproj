@@ -5,7 +5,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <CodeAnalysisRuleSet>../settings.ruleset</CodeAnalysisRuleSet>
     <Nullable>enable</Nullable>
-    <NoWarn>SA1600,SA1633</NoWarn>
+    <NoWarn>SA1600,SA1633,SA1005,SA1515</NoWarn>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.435"/>
