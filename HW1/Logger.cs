@@ -2,9 +2,9 @@ namespace Module2_HW1
 {
     public class Logger
     {
-        private static Logger instance = new Logger();
-        private static string[] log = new string[100];
-        private static int i = 0;
+        private static Logger _instance = new Logger();
+        private string[] _log = new string[100];
+        private int i = 0;
 
         static Logger()
         {
@@ -18,29 +18,29 @@ namespace Module2_HW1
         {
             get
             {
-                if (instance == null)
+                if (_instance == null)
                 {
-                    instance = new Logger();
+                    _instance = new Logger();
                 }
 
-                return instance;
+                return _instance;
             }
         }
 
         public void LogWrite(LogType log)
         {
-            Console.WriteLine(log.ToString());
+            Console.WriteLine(log);
             AddToLog(log.ToString());
         }
 
-        public static string[] GetLog()
+        public string[] GetLog()
         {
-            return log;
+            return _log;
         }
 
-        private static void AddToLog(string str)
+        private void AddToLog(string str)
         {
-            log[i] = str;
+            _log[i] = str;
             i++;
         }
     }

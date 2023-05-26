@@ -34,7 +34,7 @@ namespace Module2_HW1
                 }
 
                 Directory.CreateDirectory(@"C:\1");
-                File.WriteAllLines(@"C:\1\log.txt", Logger.GetLog());
+                File.WriteAllLines(@"C:\1\log.txt", Logger.Instance.GetLog());
             }
         }
     }
