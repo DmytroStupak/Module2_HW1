@@ -13,24 +13,21 @@ namespace Module2_HW1
                     case 1:
                         if (!Actions.First().Status)
                         {
-                            Logger log = Logger.Instance;
-                            log.LogWrite(new LogType(Log.Error, $"Action failed by a reason : {Actions.First().Error}"));
+                            Logger.Instance.LogWrite(new LogType(Log.Error, $"Action failed by a reason : {Actions.First().Error}"));
                         }
 
                         break;
                     case 2:
                         if (!Actions.Second().Status)
                         {
-                            Logger log = Logger.Instance;
-                            log.LogWrite(new LogType(Log.Error, $"Action failed by a reason : {Actions.Second().Error}"));
+                            Logger.Instance.LogWrite(new LogType(Log.Error, $"Action failed by a reason : {Actions.Second().Error}"));
                         }
 
                         break;
                     case 3:
                         if (!Actions.Third().Status)
                         {
-                            Logger log = Logger.Instance;
-                            log.LogWrite(new LogType(Log.Error, $"Action failed by a reason : {Actions.Third().Error}"));
+                            Logger.Instance.LogWrite(new LogType(Log.Error, $"Action failed by a reason : {Actions.Third().Error}"));
                         }
 
                         break;
