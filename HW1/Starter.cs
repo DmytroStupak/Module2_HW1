@@ -8,36 +8,27 @@ namespace Module2_HW1
             for (int i = 0; i < 100; i++)
             {
                 int num = rand.Next(1, 4);
+                Result? result = null;
                 switch (num)
                 {
                     case 1:
-                        if (!Actions.First().Status)
-                        {
-                            Logger log = Logger.Instance;
-                            log.LogWrite(new LogType(Log.Error, $"Action failed by a reason : {Actions.First().Error}"));
-                        }
-
+                        result = Actions.First();
                         break;
                     case 2:
-                        if (!Actions.Second().Status)
-                        {
-                            Logger log = Logger.Instance;
-                            log.LogWrite(new LogType(Log.Error, $"Action failed by a reason : {Actions.Second().Error}"));
-                        }
-
+                        result = Actions.Second();
                         break;
                     case 3:
-                        if (!Actions.Third().Status)
-                        {
-                            Logger log = Logger.Instance;
-                            log.LogWrite(new LogType(Log.Error, $"Action failed by a reason : {Actions.Third().Error}"));
-                        }
-
+                        result = Actions.Third();
                         break;
                 }
 
+                if (result != null && !result.Status)
+                {
+                    Logger.Instance.LogWrite(new LogType(Log.Error, $"Action failed by a reason : {Actions.Third().Error}"));
+                }
+
                 Directory.CreateDirectory(@"C:\1");
-                File.WriteAllLines(@"C:\1\log.txt", Logger.GetLog());
+                File.WriteAllLines(@"C:\1\log.txt", Logger.Instance.GetLog());
             }
         }
     }

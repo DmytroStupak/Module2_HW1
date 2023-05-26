@@ -4,16 +4,14 @@ namespace Module2_HW1
     {
         public static Result First()
         {
-            Logger log = Logger.Instance;
-            log.LogWrite(new LogType(Log.Info, $"Start method : First "));
+            Logger.Instance.LogWrite(new LogType(Log.Info, $"Start method : First "));
             Thread.Sleep(30);
             return new Result(true);
         }
 
         public static Result Second()
         {
-            Logger log = Logger.Instance;
-            log.LogWrite(new LogType(Log.Warning, $"Skipped logic in method : Second"));
+            Logger.Instance.LogWrite(new LogType(Log.Warning, $"Skipped logic in method : Second"));
             Thread.Sleep(30);
             return new Result(true);
         }
